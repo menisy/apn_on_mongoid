@@ -20,7 +20,7 @@ module APN
     before_save :truncate_alert
     
     # Returns the device from the subscription association
-    def device
+    def get_device
       self.subscription.device
     end
     
@@ -28,7 +28,7 @@ module APN
     #
     # This will have to do until Mongoid implements a better search for
     # embeded items.
-    def subscription
+    def get_subscription
       device = APN::Device.where(:subscriptions => {'$elemMatch' => { :_id => self.subscription_id }}).first
       device.subscriptions.where(:_id => self.subscription_id).first
     end
