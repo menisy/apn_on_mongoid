@@ -10,7 +10,7 @@ module APN
     #index :udid, :unique => true, :background => true
     
     has_many :notifications, :class_name => "APN::Notification", :inverse_of => :device
-    has_many :unsent_notifications, :class_name => 'APN::Notification', :conditions => 'sent_at is null'
+
     embeds_many :subscriptions, :class_name => "APN::Subscription"
     
     validates_presence_of :udid
