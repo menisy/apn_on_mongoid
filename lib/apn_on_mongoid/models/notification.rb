@@ -13,6 +13,7 @@ module APN
     field :device_language
     field :errors_nb
 
+    belongs_to :subscription, :class_name => "APN::Subscription"
     belongs_to :device, :class_name => 'APN::Device'
     has_one    :applications,    :class_name => 'APN::Application'
     
