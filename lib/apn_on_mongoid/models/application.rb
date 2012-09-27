@@ -10,7 +10,10 @@ module APN
 
     #index identifier: 1, :unique => true, :background => true
     
-    # references_many :subscriptions, :class_name => "APN::Subscription", :inverse_of => :application
+    has_many :subscriptions, :class_name => "APN::Subscription", :inverse_of => :application
+    has_many :groups, :class_name => 'APN::Group', :dependent => :destroy
+    has_many :devices, :class_name => 'APN::Device', :dependent => :destroy
+    has_many :notifications, :through => :devices, :dependent => :destroy
     
   end
 end
