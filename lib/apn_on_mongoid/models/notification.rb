@@ -15,7 +15,7 @@ module APN
 
     belongs_to :subscription, :class_name => "APN::Subscription"
     belongs_to :device, :class_name => 'APN::Device'
-    has_one    :applications,    :class_name => 'APN::Application', :through => :device
+    has_one    :applications,    :class_name => 'APN::Application'
     
     before_save :truncate_alert
     
