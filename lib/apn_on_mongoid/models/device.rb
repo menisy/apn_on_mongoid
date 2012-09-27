@@ -7,7 +7,7 @@ module APN
     field :udid
     field :device_info
 
-    index :udid, :unique => true, :background => true
+    #index :udid, :unique => true, :background => true
     
     referenced_in :notification, :class_name => "APN::Notification", :inverse_of => :device
     

@@ -8,7 +8,7 @@ module APN
     field :identifier
     field :certificate
 
-    index :identifier, :unique => true, :background => true
+    #index identifier: 1, :unique => true, :background => true
     
     # references_many :subscriptions, :class_name => "APN::Subscription", :inverse_of => :application
     

@@ -6,7 +6,7 @@ module APN
 
     field :token
 
-    index :token, :unique => true, :background => true
+    #index :token, :unique => true, :background => true
     
     validates_uniqueness_of :token
     validates_format_of :token, :with => /^[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}\s[a-z0-9]{8}$/
