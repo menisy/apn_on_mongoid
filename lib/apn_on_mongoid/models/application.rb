@@ -10,7 +10,6 @@ module APN
 
     #index identifier: 1, :unique => true, :background => true
     
-    has_many :groups, :class_name => 'APN::Group', :dependent => :destroy
     has_many :devices, :class_name => 'APN::Device', :dependent => :destroy
     has_many :notifications, :dependent => :destroy
     
