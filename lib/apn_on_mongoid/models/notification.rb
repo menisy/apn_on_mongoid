@@ -6,7 +6,7 @@ module APN
     include ::ActionView::Helpers::TextHelper
 
     field :sound
-    field :alert, :size => 150
+    field :alert
     field :badge, :type => Integer
     field :payload, :type => Hash
     field :sent_at, :type => Time
