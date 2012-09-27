@@ -9,7 +9,7 @@ module APN
     #index :token, :unique => true, :background => true
     
     validates_uniqueness_of :token
-    validates_format_of :token, :with => /^[a-z0-9]{8}[a-z0-9]{8}[a-z0-9]{8}[a-z0-9]{8}[a-z0-9]{8}[a-z0-9]{8}[a-z0-9]{8}\s[a-z0-9]{8}$/
+    validates_format_of :token, :with => /^[a-z0-9]{8}[a-z0-9]{8}[a-z0-9]{8}[a-z0-9]{8}[a-z0-9]{8}[a-z0-9]{8}[a-z0-9]{8}[a-z0-9]{8}$/
     
     embedded_in :device, :class_name => "APN::Device", :inverse_of => :subscriptions
     has_many :notifications
